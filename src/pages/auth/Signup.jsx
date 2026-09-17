@@ -260,7 +260,7 @@ const Signup = () => {
 
         {/* Footer */}
         <p className="mt-8 text-center text-sm text-indigo-100">
-          © 2024 Restaurant Management System. All rights reserved.
+          © 2026 Restaurant Management System. All rights reserved.
         </p>
       </div>
     </div>
