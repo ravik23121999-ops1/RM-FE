@@ -57,6 +57,14 @@ const AdminDashboard = () => {
     );
   }
 
+  if (!stats) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-gray-500">Unable to load dashboard data</div>
+      </div>
+    );
+  }
+
   const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
   return (

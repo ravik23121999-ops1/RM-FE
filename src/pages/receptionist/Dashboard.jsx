@@ -34,6 +34,14 @@ const ReceptionistDashboard = () => {
     );
   }
 
+  if (!stats) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-gray-500">Unable to load dashboard data</div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
