@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { FiMail, FiLock, FiUser, FiCoffee, FiAlertCircle, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiMail, FiLock, FiCoffee, FiAlertCircle, FiEye, FiEyeOff } from 'react-icons/fi';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -145,28 +145,6 @@ const Login = () => {
               </p>
             </div>
           </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-5 rounded-xl border border-indigo-100">
-            <h3 className="text-sm font-semibold text-gray-800 mb-3 flex items-center">
-              <FiUser className="h-4 w-4 mr-2 text-indigo-600" />
-              Demo Credentials
-            </h3>
-            <div className="space-y-2 text-sm">
-              <div className="bg-white rounded-lg p-3 border border-indigo-100">
-                <p className="font-medium text-gray-900">Admin</p>
-                <p className="text-gray-600 text-xs mt-1">admin@example.com / Admin@12345</p>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-indigo-100">
-                <p className="font-medium text-gray-900">Manager</p>
-                <p className="text-gray-600 text-xs mt-1">manager1@example.com / Manager@12345</p>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-indigo-100">
-                <p className="font-medium text-gray-900">Customer</p>
-                <p className="text-gray-600 text-xs mt-1">Sign up for a new account</p>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Footer */}
