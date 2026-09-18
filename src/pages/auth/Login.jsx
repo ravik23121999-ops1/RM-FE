@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { FiMail, FiLock, FiCoffee, FiAlertCircle, FiEye, FiEyeOff } from 'react-icons/fi';
@@ -12,11 +12,20 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const { login } = useAuth();
+  const { login, user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || `/${localStorage.getItem('userRole') || 'customer'}/dashboard`;
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (!authLoading && user) {
+      const userRole = user.role;
+      localStorage.setItem('userRole', userRole);
+      navigate(`/${userRole}/dashboard`, { replace: true });
+    }
+  }, [user, authLoading, navigate]);
 
   const handleChange = (e) => {
     setFormData({
